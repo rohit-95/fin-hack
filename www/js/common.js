@@ -1,5 +1,5 @@
 /**
- * Created by rohit on 13/2/16.
+ * Created by kalsi on 13/2/16.
  */
 var _apiBaseUrl = 'http://192.168.1.85:3000/';
 var _userDetails = {};
@@ -19,8 +19,33 @@ $(document).ready(function () {
                 _userDetails = response.user;
             }
         });
-    $('#registerForm').attr('action', _apiBaseUrl + 'register');
-    $('#addExpenseForm').attr('action', _apiBaseUrl + 'transaction/new');
+    $('#registerForm')
+        .ajaxForm({
+                url : _apiBaseUrl + 'register',
+                type: 'post',
+                success : function(response) {
+                    console.log(response);
+                }
+            }
+        );
+    $('#addExpenseForm')
+        .ajaxForm({
+                url : _apiBaseUrl + 'addExpense',
+                type: 'post',
+                success : function(response) {
+                    console.log(response);
+                }
+            }
+        );
+    $('#addDepositForm')
+        .ajaxForm({
+            url : _apiBaseUrl + 'addDeposit',
+            type: 'post',
+            success : function(response) {
+                console.log(response);
+            }
+        }
+        );
 });
 
 
