@@ -17,33 +17,77 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+<html ng-app="fin-hack">
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: *; style-src *; media-src *">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/material%20icons/material-icons.css">
+    <title>Fin-Hack</title>
+</head>
+<body>
+<header>
+    <nav class="red">
+        <div class="nav-wrapper container">
+            <a href="/home" class="brand-logo center-on-small-only">Home</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="viewTransactions.html">View Transactions</a> </li>
+                <li><a href="addExpense.html">Add Expense</a> </li>
+                <li><a href="addDeposit.html">Add Deposit</a> </li>
+                <li><a href="about.html">About</a> </li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="./templates/login.html">Login</a></li>
+                <li><a href="./templates/register.html">Register</a></li>
+                <li><a href="./templates/home.html">Home</a></li>
+                <li><a href="./templates/viewTransactions.html">View Transactions</a> </li>
+                <li><a href="./templates/addExpense.html">Add Expense</a> </li>
+                <li><a href="./templates/addDeposit.html">Add Deposit</a> </li>
+                <li><a href="./templates/about.html">About</a> </li>
+            </ul>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="row">
+        <h4 class="collection-item col s6" >Account Balance</h4><h3 class="secondary-content" id="balanceID">OKAY</h3>
+    </div>
+
+    <div class="row">
+        <h5 class="collection-item col s12" >LAST 5 TRANSACTIONS</h5>
+        <ul class="collection" id="transactionID">
+
+            <li class="collection-item avatar" id="last5ID">
+                <span class="title">Place</span>
+                <p>Expense/Deposit<br>
+                    Date
+                </p>
+                <a class="secondary-content">Amount</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</body>
 </html>
+
