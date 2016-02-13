@@ -17,7 +17,7 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
+<html ng-app="fin-hack">
     <head>
         <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
@@ -32,18 +32,40 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="css/materialize.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <link rel="stylesheet" type="text/css" href="css/material%20icons/material-icons.css">
+        <title>Fin-Hack</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+        <header>
+            <nav class="red">
+                <div class="nav-wrapper container">
+                    <a href="/home" class="brand-logo center-on-small-only">Fin-Hack</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="viewTransactions.html">View Transactions</a> </li>
+                        <li><a href="addExpense.html">Add Expense</a> </li>
+                        <li><a href="addDeposit.html">Add Deposit</a> </li>
+                        <li><a href="about.html">About</a> </li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="./home.html">Home</a></li>
+                        <li><a href="./templates/viewTransactions.html">View Transactions</a> </li>
+                        <li><a href="addExpense.html">Add Expense</a> </li>
+                        <li><a href="./templates/addDeposit.html">Add Deposit</a> </li>
+                        <li><a href="./templates/about.html">About</a> </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/materialize.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

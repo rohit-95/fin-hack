@@ -66,7 +66,7 @@
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="income" type="number" class="validate" name="monthlyIncome">
+                    <input id="income" type="number" class="validate" name="monthlyIncome" placeholder="How much money do you get in a month?">
                     <label for="income">Monthly Income</label>
                 </div>
             </div>
@@ -74,6 +74,10 @@
                     <input type="range" id="dateOfPayment" min="1" max="31" />
                     <label for="dateOfPayment">Date of Monthly Payment</label>
                 </p>
+            </div>
+            <div class="input-field col s12">
+               <input placeholder="How much money are you starting with?" id="balance" type="number" class="validate" name ="balance">
+               <label for="balance">Initial Balance</label>
             </div>
             <button class="waves-effect waves-light btn" type="submit">Proceed</button>
         </form>
