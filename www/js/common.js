@@ -6,10 +6,14 @@ var _userDetails = {};
 var _currPageName = "";
 var _windowHeight = $(window).height();
 
+if(localStorage.getItem('_userDetails')){
+    _userDetails=localStorage.getItem('_userDetails');
+    console.log(_userDetails);
+}
+
 $(document).ready(function () {
     var input = $("<input>")
-        .attr("type", "hidden")
-        .attr("name", "userNo").val(_userDetails.userNo);
+        .attr("type", "hidden");
 
     $(".button-collapse").sideNav();
     console.log("ready");
@@ -18,9 +22,12 @@ $(document).ready(function () {
         .ajaxForm({
             url : _apiBaseUrl + 'login',
             type: 'post',
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
             success : function (response) {
-                console.log(response);
+                console.log(response.user);
                 _userDetails = response.user;
+                localStorage.setItem('_userDetails', _userDetails);
+                $(input).val(_userDetails.userNo);
                 $(location).attr('href',"home.html")
             }
         });
@@ -28,6 +35,7 @@ $(document).ready(function () {
         .ajaxForm({
                 url : _apiBaseUrl + 'register',
                 type: 'post',
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 success : function(response) {
                     console.log(response);
                     $(location).attr('href',"incomeFlow.html")
@@ -35,10 +43,12 @@ $(document).ready(function () {
             }
         );
     $('#addExpenseForm')
-        .append($(input))
+        .append($(input));
+    $('#addExpenseForm')
         .ajaxForm({
                 url : _apiBaseUrl + 'transaction/new',
                 type: 'post',
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 success : function(response) {
                     console.log(response);
                     $(location).attr('href',"home.html")
@@ -46,21 +56,25 @@ $(document).ready(function () {
             }
         );
     $('#addDepositForm')
-        .append($(input))
+        .append($(input));
+    $('#addDepositForm')
         .ajaxForm({
             url : _apiBaseUrl + 'transaction/new',
             type: 'post',
-            success : function(response) {
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                success : function(response) {
                 console.log(response);
                 $(location).attr('href','home.html')
             }
         }
         );
     $('#incomeFlow')
-        .append($(input))
+        .append($(input));
+    $('#incomeFlow')
         .ajaxForm({
                 url : _apiBaseUrl + 'start',
                 type: 'post',
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 success : function(response) {
                     console.log(response);
                     $(location).attr('href',"home.html")
@@ -82,7 +96,7 @@ function onDeviceReady () {
         console.log('[js] BackgroundGeoLocation callback:  ' + location.latitude + ',' + location.longitude);
 
         // Do your HTTP request here to POST location to your server.
-        jQuery.post(url, JSON.stringify(location));
+        jQuery.post(_apiBaseUrl + 'update', JSON.stringify(location));
 
         /*
          IMPORTANT:  You must execute the finish method here to inform the native plugin that you're finished,
