@@ -17,6 +17,7 @@ $(document).ready(function () {
             success : function (response) {
                 console.log(response);
                 _userDetails = response.user;
+                $(location).attr('href','home.html');
             }
         });
     $('#registerForm')
