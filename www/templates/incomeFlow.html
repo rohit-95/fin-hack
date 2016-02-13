@@ -40,7 +40,7 @@
     <nav class="red">
         <div class="nav-wrapper container">
             <a href="/home" class="brand-logo center-on-small-only">Fin-Hack</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">Login</i></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">Register</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
                 <li><a href="/aboutUs">About Us</a></li>
@@ -66,17 +66,16 @@
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email" type="email" class="validate" name="email">
-                    <label for="email">Email</label>
+                    <input id="income" type="number" class="validate" name="monthlyIncome">
+                    <label for="income">Monthly Income</label>
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="password" type="password" class="validate" name="password">
-                    <label for="password">Password</label>
-                </div>
+                <p class="range-field">
+                    <input type="range" id="dateOfPayment" min="1" max="31" />
+                    <label for="dateOfPayment">Date of Monthly Payment</label>
+                </p>
             </div>
-            <button class="waves-effect waves-light btn" type="submit">Login</button>
+            <button class="waves-effect waves-light btn" type="submit">Proceed</button>
         </form>
     </div>
 </div>
