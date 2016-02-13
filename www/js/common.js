@@ -7,7 +7,9 @@ var _currPageName = "";
 var _windowHeight = $(window).height();
 
 $(document).ready(function () {
+    $(".button-collapse").sideNav();
     console.log("ready");
+
     $('#loginForm')
         .ajaxForm({
             url : _apiBaseUrl + 'login',
@@ -17,8 +19,6 @@ $(document).ready(function () {
                 _userDetails = response.user;
             }
         });
-
-    $(".button-collapse").sideNav();
     $('#registerForm').attr('action', _apiBaseUrl + 'register');
     $('#addExpenseForm').attr('action', _apiBaseUrl + 'transaction/new');
 });
