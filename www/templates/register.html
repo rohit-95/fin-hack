@@ -33,6 +33,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" href="../css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/material%20icons/material-icons.css">
     <title>Fin-Hack</title>
 </head>
 <body>
@@ -40,7 +41,7 @@
     <nav class="red">
         <div class="nav-wrapper container">
             <a href="/home" class="brand-logo center-on-small-only">Fin-Hack</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">Register</i></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
                 <li><a href="/aboutUs">About Us</a></li>
@@ -50,9 +51,7 @@
                 <li><a href="about.html">About</a> </li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
-                <li><a href="main.html">Home</a></li>
-                <li><a href="aboutUs.html">About Us</a></li>
-                <li><a href="contactUs.html">Contact Us</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="viewTransactions.html">View Transactions</a> </li>
                 <li><a href="addDeposit.html">Add Deposit</a> </li>
                 <li><a href="about.html">About</a> </li>
@@ -63,36 +62,39 @@
 
 <div class="container">
 <div class="row">
-    <form class="col s12">
+    <h3>Register</h3>
+    <form id="registerForm" method="post" class="col s12">
         <div class="row">
-            <div class="input-field col s6">
-                <input placeholder="First Name" id="first_name" type="text" class="validate" name="firstName">
+            <div class="input-field col s12">
+                <input placeholder="First Name" id="first_name" type="text" class="validate" name="firstName" required>
                 <label for="first_name">First Name</label>
             </div>
-            <div class="input-field col s6">
-                <input placeholder="Last Name" id="last_name" type="text" class="validate" name="lastName">
+            <div class="input-field col s12">
+                <input placeholder="Last Name" id="last_name" type="text" class="validate" name="lastName" required>
                 <label for="last_name">Last Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="email" type="email" class="validate" placeholder="Email" name="email">
+                <input id="email" type="email" class="validate" placeholder="Email" name="email" required>
                 <label for="email">Email</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="password" type="password" class="validate" name="password">
+                <input id="password" type="password" class="validate" name="password" required>
                 <label for="password">Password</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
+                <input id="tel" type="tel" class="validate" placeholder="Number" name="number" required>
+                <label for="tel">Phone Number</label>
                 <input id="Number" type="tel" class="validate" placeholder="Number">
                 <label for="Number">Phone Number</label>
             </div>
         </div>
-        <button class="waves-effect waves-light btn" type="submit">Register</button>
+        <button id="register" class="waves-effect waves-light btn" type="submit">Register</button>
     </form>
 </div>
     </div>
@@ -102,6 +104,7 @@
 <script src="../js/materialize.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 </body>
 </html>
 
