@@ -17,7 +17,7 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
+<html ng-app="fin-hack">
     <head>
         <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
@@ -32,10 +32,33 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="css/materialize.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <title>Fin-Hack</title>
     </head>
     <body>
+        <header>
+            <nav class="red">
+                <div class="nav-wrapper container">
+                    <a href="/home" class="brand-logo center-on-small-only">Fin-Hack</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                        <li><a href="contactUs.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="main.html">Home</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                        <li><a href="contactUs.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div ng-view>
+        </div>
+
         <div class="app">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
@@ -43,6 +66,9 @@
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
+        <script src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/ng-cordova.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
