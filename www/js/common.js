@@ -46,7 +46,7 @@ $(document).ready(function () {
             type: 'post',
             success : function(response) {
                 console.log(response);
-                $(location).attr('href',"home.html")
+                $(location).attr('href','home.html')
             }
         }
         );
