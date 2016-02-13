@@ -17,6 +17,7 @@ $(document).ready(function () {
             success : function (response) {
                 console.log(response);
                 _userDetails = response.user;
+                $(location).attr('href',"home.html")
             }
         });
     $('#registerForm')
@@ -25,6 +26,7 @@ $(document).ready(function () {
                 type: 'post',
                 success : function(response) {
                     console.log(response);
+                    $(location).attr('href',"incomeFlow.html")
                 }
             }
         );
@@ -34,6 +36,7 @@ $(document).ready(function () {
                 type: 'post',
                 success : function(response) {
                     console.log(response);
+                    $(location).attr('href',"home.html")
                 }
             }
         );
@@ -43,8 +46,19 @@ $(document).ready(function () {
             type: 'post',
             success : function(response) {
                 console.log(response);
+                $(location).attr('href',"home.html")
             }
         }
+        );
+    $('#incomeFlow')
+        .ajaxForm({
+                url : _apiBaseUrl + 'incomeFlow',
+                type: 'post',
+                success : function(response) {
+                    console.log(response);
+                    $(location).attr('href',"home.html")
+                }
+            }
         );
 });
 
