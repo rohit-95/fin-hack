@@ -20,12 +20,19 @@ Backend to be found at https://github.com/codemerlin19/fin-hack-backend
     
 ### Android SDK:
   Download the SDK and install the following items or later :
+  
   Android SDK Tools	24.4.1
+  
   Android SDK Platform-tools	23.1
+  
   Android SDK Build-tools	23.0.1
+  
   Android Support Repository	25
+  
   Android Support Library	23.1.1
+  
   Google Play Services	29
+  
   Google Repository	24
   
 ### Install Cordova
@@ -44,7 +51,8 @@ Backend to be found at https://github.com/codemerlin19/fin-hack-backend
     
     cordova build android
     
-    if any problem due to platform then add and remove platform by
-      cordova platform rm android
+  if any problem due to platform then add and remove platform by
       
-      cordova platform add android
+    cordova platform rm android
+      
+    cordova platform add android
