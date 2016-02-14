@@ -48,10 +48,11 @@ Backend to be found at https://github.com/codemerlin19/fin-hack-backend
     cd fin-hack
     
   Change var _apiBaseUrl in  fin-hack/www/js/common.js to the ip and port where backend server is running
+  and then build apk by:
     
     cordova build android
     
-  if any problem due to platform then add and remove platform by
+  If any problem due to platform or permissions then try removing and adding platform by
       
     cordova platform rm android
       
