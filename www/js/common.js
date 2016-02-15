@@ -5,16 +5,16 @@ var _apiBaseUrl = 'http://192.168.1.85:3000/';
 var _userDetails = {};
 var _currPageName = "";
 var _windowHeight = $(window).height();
+var input = $("<input>")
+    .attr("type", "hidden");
 
 if(localStorage.getItem('_userDetails')){
     _userDetails=localStorage.getItem('_userDetails');
+    $(input).val(localStorage.getItem('_userDetails').userNo);
     console.log(_userDetails);
 }
 
 $(document).ready(function () {
-    var input = $("<input>")
-        .attr("type", "hidden");
-
     $(".button-collapse").sideNav();
     console.log("ready");
 
@@ -26,8 +26,8 @@ $(document).ready(function () {
             success : function (response) {
                 console.log(response.user);
                 _userDetails = response.user;
-                localStorage.setItem('_userDetails', _userDetails);
-                $(input).val(_userDetails.userNo);
+                localStorage.setItem('_userDetails', response.user);
+                $(input).val(response.user.userNo);
                 $(location).attr('href',"home.html")
             }
         });
